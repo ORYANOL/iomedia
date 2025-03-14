@@ -1,0 +1,99 @@
+/* Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    background-color: none;
+    z-index: 100;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    max-width: 1280px;
+    /* Match the root max-width */
+    box-sizing: border-box;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 20px;
+    margin: 0;
+    padding-right: 10px;
+}
+
+.logoHead {
+    width: 24px;
+    height: 24px;
+}
+
+/* Theme toggle button styles */
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+}
+
+/* .theme-toggle:hover {
+    background-color: var(--background-tertiary);
+} */
+
+.theme-toggle:focus,
+.theme-toggle:focus-visible {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Glow effect for light/dark mode icons on hover */
+.theme-toggle:hover .material-symbols-outlined {
+    transition: text-shadow 0.3s ease;
+}
+
+/* Yellow glow for light mode icon */
+.theme-toggle:hover .light-icon {
+    text-shadow: 0 0 10px #ffcc00, 0 0 15px #ffcc00;
+    animation: logo-spin 20s linear;
+}
+
+/* Gray glow for dark mode icon */
+.theme-toggle:hover .dark-icon {
+    text-shadow: 0 0 10px #999999, 0 0 15px #999999;
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .logoHead {
+        animation: logo-spin infinite 20s linear;
+    }
+}
+
+/* Add some spacing at the top of the page to account for fixed header */
+body {
+    padding-top: 60px;
+}

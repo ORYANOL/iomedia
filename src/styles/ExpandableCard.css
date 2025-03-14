@@ -1,0 +1,253 @@
+/* ExpandableCard.css */
+.card-container {
+    display: flex;
+    padding: 2px;
+    height: auto;
+}
+
+.card {
+    width: 100%;
+    background-color: var(--background-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position: relative;
+}
+
+.card-header {
+    padding: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.card-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* Default image styles */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Image style variants */
+.card-image.profile-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--background-primary);
+}
+
+.card-image.rounded-square {
+    width: 150px;
+    height: 150px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.card-image.wide-banner {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+}
+
+.card-image.premium-profile {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid gold;
+    box-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
+}
+
+/* Remove or comment out the .card-title styles since it's no longer used */
+
+.card-subtitle {
+    margin: 12px 0 0;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.card-content {
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.card-content.expanded {
+    max-height: 800px;
+    opacity: 1;
+    /* Removing this class since we now use inline styles */
+}
+
+.card-body {
+    padding: 0 24px 24px;
+    border-top: 1px solid var(--background-tertiary);
+}
+
+.card-body p {
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.card-body p:first-child {
+    margin-top: 16px;
+}
+
+
+
+.button-container {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-button {
+    padding: 8px 16px;
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.fa-whatsapp {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+/*.contact-button:hover {
+    background-color: #075E54;
+    color: white;
+  }*/
+
+.toggle-button-container {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    border-top: 1px solid var(--background-tertiary);
+}
+
+.toggle-button {
+    width: auto;
+    height: auto;
+    border: none;
+    background-color: transparent;
+    color: var(--highlight-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 8px;
+}
+
+.toggle-button .material-symbols-outlined {
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-button:focus,
+.toggle-button:focus-visible {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Add these rules after the existing .toggle-button styles */
+
+
+/* Add these new rules to your existing ExpandableCard.css */
+
+/* Style for expanded YouTube card (red) */
+.card.expanded-da0000 .toggle-button,
+.card.expanded-000000 .toggle-button {
+    color: white !important;
+}
+
+/* Style for expanded Prime Video card (blue) */
+.card.expanded-0779FF .toggle-button {
+    color: white !important;
+}
+
+/* Style for expanded Netflix card (red) */
+.card.expanded-000000 .toggle-button {
+    color: white !important;
+}
+
+/* Text color for dark theme */
+[data-theme="dark"] .card.expanded-da0000 .card-body p,
+[data-theme="dark"] .card.expanded-da0000 .card-subtitle,
+[data-theme="dark"] .card.expanded-0779FF .card-body p,
+[data-theme="dark"] .card.expanded-0779FF .card-subtitle,
+[data-theme="dark"] .card.expanded-000000 .card-body p,
+[data-theme="dark"] .card.expanded-000000 .card-subtitle {
+    color: white !important;
+}
+
+/* Text color for light theme */
+[data-theme="light"] .card.expanded-da0000 .card-body p,
+[data-theme="light"] .card.expanded-da0000 .card-subtitle,
+[data-theme="light"] .card.expanded-0779FF .card-body p,
+[data-theme="light"] .card.expanded-0779FF .card-subtitle,
+[data-theme="light"] .card.expanded-000000 .card-body p,
+[data-theme="light"] .card.expanded-000000 .card-subtitle {
+    color: white !important;
+}
+
+/* Make sure the action button text is white in expanded cards */
+.card.expanded-da0000 .contact-button,
+.card.expanded-0779FF .contact-button,
+.card.expanded-000000 .contact-button {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Add hover effect for buttons in expanded cards */
+.card.expanded-da0000 .contact-button:hover,
+.card.expanded-0779FF .contact-button:hover,
+.card.expanded-000000 .contact-button:hover {
+    background-color: #075E54 !important;
+}
+
+/* Price pill styles */
+.price-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-left: 8px;
+    color: white;
+}
+
+.price-pill.youtube {
+    background-color: #da0000;
+}
+
+.price-pill.prime {
+    background-color: #0779FF;
+}
+
+.price-pill.netflix {
+    background-color: #E50914;
+}
