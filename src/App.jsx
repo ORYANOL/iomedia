@@ -10,13 +10,12 @@ import ExpandableCard from "./components/ExpandableCard";
 
 function App() {
   const [theme, setTheme] = useState(() => {
-    // Get saved theme from localStorage or use system preference
+    // Get saved theme from localStorage or default to dark
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) return savedTheme;
 
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light';
+    // Default to dark instead of checking system preference
+    return 'dark';
   });
 
   const toggleTheme = () => {
